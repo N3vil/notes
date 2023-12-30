@@ -38,3 +38,50 @@ sed -n '10,15p' /etc/services
 sed -n '20,$p' /etc/services
 ```   
 </details>
+
+<details>
+<summary>Insert a line at the beginning of a file using sed</summary>
+
+```bash
+# sample file
+$ sed '' script01.sh
+echo "yes"
+
+# test
+$ sed '1i #!/bin/bash' script01.sh
+#!/bin/bash
+echo "yes"
+
+# do an inplace edit with -i
+$ sed -i '1i #!/bin/bash' script01.sh
+
+$ sed '' script01.sh
+#!/bin/bash
+echo "yes"
+```   
+</details>
+
+<details>
+<summary>Append a line at the end of file using sed</summary>
+
+```bash
+sudo sed -i '$a 8.8.8.8 google.com' /etc/hosts
+```   
+
+_Note: We cannot use sudo with redirection_
+
+```bash
+sudo echo '8.8.8.8 google' >> /etc/hosts
+-bash: /etc/hosts: Permission denied
+```
+</details>
+
+<details>
+<summary>Delete the last line of a file</summary>
+
+```bash
+sed -i '$d' script01.sh
+
+cat script01.sh
+#!/bin/bash
+```
