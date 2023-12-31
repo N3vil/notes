@@ -120,6 +120,35 @@ Listen 80
 </summary>
 
 ```bash
+# We can pass a range of regular expression as we would pass a range of lines
 sed -n '/<VirtualHost/,/<\/VirtualHost/p' vhost.sample
 ```   
+</details>
+
+<details>
+<summary>Without using an enhanced regular expression, print all lines in a file that do not start with a comment or is an empty line</summary>
+
+
+```bash
+# We can pass multiple sed expressions with a semicolon
+sed '/^\s*$/d;/^\s*#/d' /etc/services
+```
+
+_The expressions can also be stored in a **sed script** and passed as an argument to the sed command_
+
+```bash
+sed -f test.sed /etc/services
+```
+
+where test.sed contains
+```
+/^\s*$/d
+/^\s*#/d
+```
+
+</details>
+
+<details>
+    <summary>Consider 
+
 </details>
