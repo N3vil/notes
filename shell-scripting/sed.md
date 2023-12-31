@@ -147,8 +147,3 @@ where test.sed contains
 ```
 
 </details>
-
-<details>
-    <summary>Consider 
-
-</details>
