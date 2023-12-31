@@ -1,6 +1,6 @@
 ## grep
 
-### Prints lines that match patterns
+### Grep prints lines that match patterns
 
 <details>
 <summary>Count the number of lines in a file using grep?</summary>
@@ -14,7 +14,7 @@ grep -c '' /etc/services
 <summary>Print all lines in a file that do not start with a comment or is an empty line</summary>
 
 ```bash
-grep -vE '^(#|$)' /etc/ssh/ssh_config
+grep -vE '^\s*(#|$)' /etc/ssh/ssh_config
 ```
 </details>
 

@@ -85,3 +85,41 @@ sed -i '$d' script01.sh
 cat script01.sh
 #!/bin/bash
 ```
+</details>
+
+
+<details>
+<summary>Print all lines in a file that do not start with a comment or is an empty line</summary>
+
+```bash
+sed -E '/^\s*(#|$)/d' /etc/services
+```
+</details>
+
+
+<details>
+<summary>From the sample apache config below, print only the lines between each VirtualHost block
+
+```
+# Ensure that Apache listens on port 80
+Listen 80
+<VirtualHost *:80>
+    DocumentRoot "/www/example1"
+    ServerName www.example.com
+
+    # Other directives here
+</VirtualHost>
+
+<VirtualHost *:80>
+    DocumentRoot "/www/example2"
+    ServerName www.example.org
+
+    # Other directives here
+</VirtualHost>
+```
+</summary>
+
+```bash
+sed -n '/<VirtualHost/,/<\/VirtualHost/p' vhost.sample
+```   
+</details>
