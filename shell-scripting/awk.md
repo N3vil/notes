@@ -102,3 +102,21 @@ END {
 }
 ```
 </details>
+
+<details>
+<summary>Print the /etc/passwd file as a comma separated file
+
+```bash
+awk 'BEGIN {FS=":"; OFS=","} { print $1,$2,$3,$4,$5,$6,$7 }' /etc/passwd
+```
+
+</details>
+
+<details>
+<summary>Print the /etc/passwd file as yaml file
+
+```bash
+awk 'BEGIN {FS=":"; OFS=","} { print $1,$2,$3,$4,$5,$6,$7 }' /etc/passwd
+```
+
+</details>
