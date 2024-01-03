@@ -1,4 +1,4 @@
-## Create an alias called 'cleanfile' that will print all lines that is not a comment or is an empty line
+## Create an alias called 'cleanfile' that will print all lines from a file that is not a comment or is an empty line
 
 <details>
 <summary>Solution</summary>
